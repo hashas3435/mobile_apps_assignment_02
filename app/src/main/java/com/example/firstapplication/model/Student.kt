@@ -1,18 +1,13 @@
 package com.example.firstapplication.model
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-
-@Entity
 data class Student(
-    @PrimaryKey val id: String,
+    val id: String,
     val name: String,
     val avatarUrl: String,
     var isChecked: Boolean
 ) {
 
     companion object {
-
         const val ID_KEY = "id"
         const val NAME_KEY = "name"
         const val AVATAR_URL_KEY = "avatarUrl"
