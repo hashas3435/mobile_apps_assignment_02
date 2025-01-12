@@ -32,7 +32,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:text="ID:"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -89,7 +89,7 @@
         android:id="@+id/phoneTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:text="Phone:"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -100,15 +100,15 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="phone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/phoneTextView"
         app:layout_constraintEnd_toEndOf="@+id/idEditText"
-        app:layout_constraintStart_toEndOf="@+id/phoneTextView"
-        tools:layout_editor_absoluteY="233dp" />
+        app:layout_constraintStart_toEndOf="@+id/phoneTextView" />
 
     <TextView
         android:id="@+id/addressTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:text="Address:"
         app:layout_constraintStart_toStartOf="@+id/phoneTextView"
         app:layout_constraintTop_toBottomOf="@+id/phoneTextView" />
@@ -120,9 +120,9 @@
         android:layout_marginStart="4dp"
         android:ems="10"
         android:inputType="textPostalAddress"
+        app:layout_constraintBaseline_toBaselineOf="@+id/addressTextView"
         app:layout_constraintEnd_toEndOf="@+id/phoneEditText"
-        app:layout_constraintStart_toEndOf="@+id/addressTextView"
-        tools:layout_editor_absoluteY="276dp" />
+        app:layout_constraintStart_toEndOf="@+id/addressTextView" />
 
     <CheckBox
         android:id="@+id/isCheckedCheckBox"
