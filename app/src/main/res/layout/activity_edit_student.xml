@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/avatar" />
 
     <TextView
-        android:id="@+id/edit_student_activity_name_textView"
+        android:id="@+id/student_details_activity_name_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -29,13 +29,13 @@
         app:layout_constraintTop_toBottomOf="@+id/user_avatr" />
 
     <TextView
-        android:id="@+id/edit_student_activity_id_textView"
+        android:id="@+id/student_details_activity_id_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="ID:"
-        app:layout_constraintStart_toStartOf="@+id/edit_student_activity_name_textView"
-        app:layout_constraintTop_toBottomOf="@+id/edit_student_activity_name_textView" />
+        app:layout_constraintStart_toStartOf="@+id/student_details_activity_name_textView"
+        app:layout_constraintTop_toBottomOf="@+id/student_details_activity_name_textView" />
 
     <EditText
         android:id="@+id/edit_student_activity_name_editText"
@@ -45,9 +45,9 @@
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edit_student_activity_name_textView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/student_details_activity_name_textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edit_student_activity_name_textView" />
+        app:layout_constraintStart_toEndOf="@+id/student_details_activity_name_textView" />
 
     <EditText
         android:id="@+id/edit_student_activity_id_editText"
@@ -56,9 +56,9 @@
         android:layout_marginStart="4dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edit_student_activity_id_textView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/student_details_activity_id_textView"
         app:layout_constraintEnd_toEndOf="@+id/edit_student_activity_name_editText"
-        app:layout_constraintStart_toEndOf="@+id/edit_student_activity_id_textView" />
+        app:layout_constraintStart_toEndOf="@+id/student_details_activity_id_textView" />
 
     <Button
         android:id="@+id/edit_student_activity_save_button"
@@ -88,13 +88,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/edit_student_activity_phone_textView"
+        android:id="@+id/student_details_activity_phone_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Phone:"
-        app:layout_constraintStart_toStartOf="@+id/edit_student_activity_id_textView"
-        app:layout_constraintTop_toBottomOf="@+id/edit_student_activity_id_textView" />
+        app:layout_constraintStart_toStartOf="@+id/student_details_activity_id_textView"
+        app:layout_constraintTop_toBottomOf="@+id/student_details_activity_id_textView" />
 
     <EditText
         android:id="@+id/edit_student_phone_editText"
@@ -103,9 +103,9 @@
         android:layout_marginStart="4dp"
         android:ems="10"
         android:inputType="phone"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edit_student_activity_phone_textView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/student_details_activity_phone_textView"
         app:layout_constraintEnd_toEndOf="@+id/edit_student_activity_id_editText"
-        app:layout_constraintStart_toEndOf="@+id/edit_student_activity_phone_textView" />
+        app:layout_constraintStart_toEndOf="@+id/student_details_activity_phone_textView" />
 
     <TextView
         android:id="@+id/edit_student_activity_address_textView"
@@ -113,8 +113,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Address:"
-        app:layout_constraintStart_toStartOf="@+id/edit_student_activity_phone_textView"
-        app:layout_constraintTop_toBottomOf="@+id/edit_student_activity_phone_textView" />
+        app:layout_constraintStart_toStartOf="@+id/student_details_activity_phone_textView"
+        app:layout_constraintTop_toBottomOf="@+id/student_details_activity_phone_textView" />
 
     <EditText
         android:id="@+id/edit_student_activity_address_editText"

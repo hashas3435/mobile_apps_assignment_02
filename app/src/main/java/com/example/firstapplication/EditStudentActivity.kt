@@ -11,9 +11,9 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.firstapplication.model.Model
 import com.example.firstapplication.model.Student
 
-const val DEFAULT_STUDENT_POSITION = 0
 
 class EditStudentActivity : AppCompatActivity() {
+    val DEFAULT_STUDENT_POSITION = 0
     private var studentPosition: Int = DEFAULT_STUDENT_POSITION
 
     private var nameEditText: EditText? = null
@@ -63,22 +63,25 @@ class EditStudentActivity : AppCompatActivity() {
     }
 
     private fun setListenersToButtons() {
-        val saveStudentButton = findViewById<Button>(R.id.edit_student_activity_save_button)
-        saveStudentButton.setOnClickListener {
-            val student = createStudentFromInputs()
-            Model.shared.students[studentPosition] = student
-            finish()
+        findViewById<Button>(R.id.edit_student_activity_save_button).apply {
+            setOnClickListener {
+                val student = createStudentFromInputs()
+                Model.shared.students[studentPosition] = student
+                finish()
+            }
         }
 
-        val deleteStudentButton = findViewById<Button>(R.id.edit_student_activity_delete_button)
-        deleteStudentButton.setOnClickListener {
-            Model.shared.students.removeAt(studentPosition)
-            finish()
+        findViewById<Button>(R.id.edit_student_activity_delete_button).apply {
+            setOnClickListener {
+                Model.shared.students.removeAt(studentPosition)
+                finish()
+            }
         }
 
-        val cancelButton = findViewById<Button>(R.id.edit_student_activity_cancel_button)
-        cancelButton.setOnClickListener {
-            finish()
+        findViewById<Button>(R.id.edit_student_activity_cancel_button).apply {
+            setOnClickListener {
+                finish()
+            }
         }
     }
 }
