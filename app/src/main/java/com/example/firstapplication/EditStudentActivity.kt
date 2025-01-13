@@ -67,11 +67,13 @@ class EditStudentActivity : AppCompatActivity() {
         saveStudentButton.setOnClickListener {
             val student = createStudentFromInputs()
             Model.shared.students[studentPosition] = student
+            finish()
         }
 
         val deleteStudentButton = findViewById<Button>(R.id.edit_student_activity_delete_button)
         deleteStudentButton.setOnClickListener {
             Model.shared.students.removeAt(studentPosition)
+            finish()
         }
 
         val cancelButton = findViewById<Button>(R.id.edit_student_activity_cancel_button)
