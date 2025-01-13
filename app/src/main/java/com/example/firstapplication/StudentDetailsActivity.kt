@@ -55,7 +55,7 @@ class StudentDetailsActivity : AppCompatActivity() {
     }
 
     private fun setListenersToButtons() {
-        saveStudentButton = findViewById<Button>(R.id.student_details_activity_edit_button)
+        saveStudentButton = findViewById(R.id.student_details_activity_edit_button)
         saveStudentButton?.apply {
             setOnClickListener {
                 val intent = Intent(this@StudentDetailsActivity, EditStudentActivity::class.java)
