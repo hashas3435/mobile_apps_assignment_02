@@ -11,7 +11,8 @@ class Model private constructor(){
             val student = Student(
                 name = "Student $i",
                 id = "Student id: $i",
-                avatarUrl = "",
+                email = "student$i@gmail.com",
+                phone = "054-5122011",
                 isChecked = false,
             )
             students.add(student);
