@@ -1,7 +1,6 @@
 package com.example.firstapplication
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
@@ -9,18 +8,19 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.firstapplication.model.Model
 import com.example.firstapplication.model.Student
 
 const val DEFAULT_STUDENT_POSITION = 0
 
 class EditStudentActivity : AppCompatActivity() {
-    var student: Student? = null
+    private var studentPosition: Int = DEFAULT_STUDENT_POSITION
 
-    var nameEditText: EditText? = null
-    var idEditText: EditText? = null
-    var phoneEditText: EditText? = null
-    var addressEditText: EditText? = null
-    var isCheckedCheckBox: CheckBox? = null
+    private var nameEditText: EditText? = null
+    private var idEditText: EditText? = null
+    private var phoneEditText: EditText? = null
+    private var addressEditText: EditText? = null
+    private var isCheckedCheckBox: CheckBox? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,28 +38,9 @@ class EditStudentActivity : AppCompatActivity() {
         addressEditText = findViewById(R.id.edit_student_activity_address_editText)
         isCheckedCheckBox = findViewById(R.id.edit_student_activity_checked_checkBox)
 
-        val studentPosition = intent.getIntExtra("student_position", DEFAULT_STUDENT_POSITION)
-        val students = mutableListOf(
-            Student(
-                name = "tomer shomron",
-                id = "someId",
-                phone = "04325234",
-                address = "Gan-yavne",
-                isChecked = true
-            ),
-            Student(
-                name = "omer hasid",
-                id = "someId2",
-                phone = "3454676375",
-                address = "Idk",
-                isChecked = false
-            )
-        )
-        student = students[studentPosition]
-
-        student?.let {
-            setStudentData(it)
-        }
+        studentPosition = intent.getIntExtra("student_position", DEFAULT_STUDENT_POSITION)
+        val student = Model.shared.students[studentPosition]
+        setStudentData(student)
         setListenersToButtons()
     }
 
@@ -77,23 +58,20 @@ class EditStudentActivity : AppCompatActivity() {
             id = idEditText?.text.toString(),
             phone = phoneEditText?.text.toString(),
             address = addressEditText?.text.toString(),
-            isChecked = isCheckedCheckBox?.isChecked ?: student?.isChecked ?: false
+            isChecked = isCheckedCheckBox?.isChecked ?: false
         )
     }
 
     private fun setListenersToButtons() {
         val saveStudentButton = findViewById<Button>(R.id.edit_student_activity_save_button)
         saveStudentButton.setOnClickListener {
-            // TODO: update student to students model
             val student = createStudentFromInputs()
-            Log.i("User", "update student: $student")
+            Model.shared.students[studentPosition] = student
         }
 
         val deleteStudentButton = findViewById<Button>(R.id.edit_student_activity_delete_button)
         deleteStudentButton.setOnClickListener {
-            // TODO: delete student from students model
-            val student = createStudentFromInputs()
-            Log.i("User", "delete student: $student")
+            Model.shared.students.removeAt(studentPosition)
         }
 
         val cancelButton = findViewById<Button>(R.id.edit_student_activity_cancel_button)
