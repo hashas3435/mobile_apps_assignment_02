@@ -5,15 +5,146 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="ltr"
     tools:context=".EditStudentActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit Student Activity"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/user_avatr"
+        android:layout_width="165dp"
+        android:layout_height="124dp"
+        android:contentDescription="profile avater"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/avatar" />
+
+    <TextView
+        android:id="@+id/student_details_activity_name_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="Name:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_avatr" />
+
+    <TextView
+        android:id="@+id/student_details_activity_id_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="ID:"
+        app:layout_constraintStart_toStartOf="@+id/student_details_activity_name_textView"
+        app:layout_constraintTop_toBottomOf="@+id/student_details_activity_name_textView" />
+
+    <EditText
+        android:id="@+id/edit_student_activity_name_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/student_details_activity_name_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/student_details_activity_name_textView" />
+
+    <EditText
+        android:id="@+id/edit_student_activity_id_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/student_details_activity_id_textView"
+        app:layout_constraintEnd_toEndOf="@+id/edit_student_activity_name_editText"
+        app:layout_constraintStart_toEndOf="@+id/student_details_activity_id_textView" />
+
+    <Button
+        android:id="@+id/edit_student_activity_save_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="40dp"
+        android:layoutDirection="ltr"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/edit_student_activity_delete_button" />
+
+    <Button
+        android:id="@+id/edit_student_activity_cancel_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="4dp"
+        android:layoutDirection="ltr"
+        android:text="Cancel"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edit_student_activity_delete_button"
+        app:layout_constraintEnd_toStartOf="@+id/edit_student_activity_delete_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/student_details_activity_phone_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Phone:"
+        app:layout_constraintStart_toStartOf="@+id/student_details_activity_id_textView"
+        app:layout_constraintTop_toBottomOf="@+id/student_details_activity_id_textView" />
+
+    <EditText
+        android:id="@+id/edit_student_phone_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/student_details_activity_phone_textView"
+        app:layout_constraintEnd_toEndOf="@+id/edit_student_activity_id_editText"
+        app:layout_constraintStart_toEndOf="@+id/student_details_activity_phone_textView" />
+
+    <TextView
+        android:id="@+id/edit_student_activity_address_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Address:"
+        app:layout_constraintStart_toStartOf="@+id/student_details_activity_phone_textView"
+        app:layout_constraintTop_toBottomOf="@+id/student_details_activity_phone_textView" />
+
+    <EditText
+        android:id="@+id/edit_student_activity_address_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edit_student_activity_address_textView"
+        app:layout_constraintEnd_toEndOf="@+id/edit_student_phone_editText"
+        app:layout_constraintStart_toEndOf="@+id/edit_student_activity_address_textView" />
+
+    <CheckBox
+        android:id="@+id/edit_student_activity_checked_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="checked"
+        app:layout_constraintStart_toStartOf="@+id/edit_student_activity_address_textView"
+        app:layout_constraintTop_toBottomOf="@+id/edit_student_activity_address_textView" />
+
+    <Button
+        android:id="@+id/edit_student_activity_delete_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:text="Delete"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edit_student_activity_save_button"
+        app:layout_constraintEnd_toStartOf="@+id/edit_student_activity_save_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/edit_student_activity_cancel_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
