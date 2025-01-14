@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    tools:context=".AddStudentActivity">
+
+    <ImageView
+        android:id="@+id/add_student_activity_user_avatar"
+        android:layout_width="165dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="profile avater"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/avatar" />
+
+    <TextView
+        android:id="@+id/add_student_activity_name_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="Name:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_student_activity_user_avatar" />
+
+    <TextView
+        android:id="@+id/add_student_activity_id_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="ID:"
+        app:layout_constraintStart_toStartOf="@+id/add_student_activity_name_textView"
+        app:layout_constraintTop_toBottomOf="@+id/add_student_activity_name_textView" />
+
+    <EditText
+        android:id="@+id/add_student_activity_name_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/add_student_activity_name_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/add_student_activity_name_textView" />
+
+    <EditText
+        android:id="@+id/add_student_activity_id_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/add_student_activity_id_textView"
+        app:layout_constraintEnd_toEndOf="@+id/add_student_activity_name_editText"
+        app:layout_constraintStart_toEndOf="@+id/add_student_activity_id_textView" />
+
+    <TextView
+        android:id="@+id/add_student_activity_phone_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Phone:"
+        app:layout_constraintStart_toStartOf="@+id/add_student_activity_id_textView"
+        app:layout_constraintTop_toBottomOf="@+id/add_student_activity_id_textView" />
+
+    <EditText
+        android:id="@+id/add_student_activity_phone_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/add_student_activity_phone_textView"
+        app:layout_constraintEnd_toEndOf="@+id/add_student_activity_id_editText"
+        app:layout_constraintStart_toEndOf="@+id/add_student_activity_phone_textView" />
+
+    <TextView
+        android:id="@+id/add_student_activity_address_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Address:"
+        app:layout_constraintStart_toStartOf="@+id/add_student_activity_phone_textView"
+        app:layout_constraintTop_toBottomOf="@+id/add_student_activity_phone_textView" />
+
+    <EditText
+        android:id="@+id/add_student_activity_address_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        app:layout_constraintBaseline_toBaselineOf="@+id/add_student_activity_address_textView"
+        app:layout_constraintEnd_toEndOf="@+id/add_student_activity_phone_editText"
+        app:layout_constraintStart_toEndOf="@+id/add_student_activity_address_textView" />
+
+    <CheckBox
+        android:id="@+id/add_student_activity_isChecked_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="checked"
+        app:layout_constraintStart_toStartOf="@+id/add_student_activity_address_textView"
+        app:layout_constraintTop_toBottomOf="@+id/add_student_activity_address_textView" />
+
+    <Button
+        android:id="@+id/createButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="40dp"
+        android:layoutDirection="ltr"
+        android:text="Create"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cancelButton" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="4dp"
+        android:layoutDirection="ltr"
+        android:text="Cancel"
+        app:layout_constraintBaseline_toBaselineOf="@+id/createButton"
+        app:layout_constraintEnd_toStartOf="@+id/createButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
