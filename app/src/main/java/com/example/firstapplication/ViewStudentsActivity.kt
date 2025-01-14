@@ -1,7 +1,9 @@
 package com.example.firstapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -36,5 +38,12 @@ class ViewStudentsActivity : AppCompatActivity() {
         val adapter = StudentsRecyclerAdapter(students)
 
         recyclerView.adapter = adapter
+
+        findViewById<Button>(R.id.add_student_button).apply {
+            setOnClickListener {
+                val intent = Intent(this@ViewStudentsActivity, AddStudentActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 }
