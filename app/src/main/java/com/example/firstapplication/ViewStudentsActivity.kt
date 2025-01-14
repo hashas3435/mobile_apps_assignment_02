@@ -42,10 +42,14 @@ class ViewStudentsActivity : AppCompatActivity() {
         adapter.listener = object : OnItemClickListener {
             override fun onItemClick(position: Int){
                 val intent = Intent(this@ViewStudentsActivity, StudentDetailsActivity::class.java)
+                intent.putExtra("student_position", position);
                 startActivity(intent)
             }
             override fun onItemClick(student: Student?){
                 val intent = Intent(this@ViewStudentsActivity, StudentDetailsActivity::class.java)
+                val position = Model.shared.students.indexOf(student)
+                intent.putExtra("student_position", position);
+
                 startActivity(intent)
             }
         }
