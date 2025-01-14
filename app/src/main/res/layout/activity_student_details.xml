@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/avatar" />
 
     <TextView
-        android:id="@+id/edit_student_activity_name_label_textView"
+        android:id="@+id/student_details_activity_name_label_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -30,13 +30,13 @@
         app:layout_constraintTop_toBottomOf="@+id/user_avatr" />
 
     <TextView
-        android:id="@+id/edit_student_activity_id_label_textView"
+        android:id="@+id/student_details_activity_id_label_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="ID:"
-        app:layout_constraintStart_toStartOf="@+id/edit_student_activity_name_label_textView"
-        app:layout_constraintTop_toBottomOf="@+id/edit_student_activity_name_label_textView" />
+        app:layout_constraintStart_toStartOf="@+id/student_details_activity_name_label_textView"
+        app:layout_constraintTop_toBottomOf="@+id/student_details_activity_name_label_textView" />
 
     <Button
         android:id="@+id/student_details_activity_edit_button"
@@ -50,22 +50,22 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/edit_student_activity_phone_label_textView"
+        android:id="@+id/student_details_activity_phone_label_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Phone:"
-        app:layout_constraintStart_toStartOf="@+id/edit_student_activity_id_label_textView"
-        app:layout_constraintTop_toBottomOf="@+id/edit_student_activity_id_label_textView" />
+        app:layout_constraintStart_toStartOf="@+id/student_details_activity_id_label_textView"
+        app:layout_constraintTop_toBottomOf="@+id/student_details_activity_id_label_textView" />
 
     <TextView
-        android:id="@+id/edit_student_activity_address_label_textView"
+        android:id="@+id/student_details_activity_address_label_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Address:"
-        app:layout_constraintStart_toStartOf="@+id/edit_student_activity_phone_label_textView"
-        app:layout_constraintTop_toBottomOf="@+id/edit_student_activity_phone_label_textView" />
+        app:layout_constraintStart_toStartOf="@+id/student_details_activity_phone_label_textView"
+        app:layout_constraintTop_toBottomOf="@+id/student_details_activity_phone_label_textView" />
 
     <CheckBox
         android:id="@+id/edit_student_activity_checked_checkBox"
@@ -74,38 +74,38 @@
         android:layout_marginTop="32dp"
         android:clickable="false"
         android:text="checked"
-        app:layout_constraintStart_toStartOf="@+id/edit_student_activity_address_label_textView"
-        app:layout_constraintTop_toBottomOf="@+id/edit_student_activity_address_label_textView" />
+        app:layout_constraintStart_toStartOf="@+id/student_details_activity_address_label_textView"
+        app:layout_constraintTop_toBottomOf="@+id/student_details_activity_address_label_textView" />
 
     <TextView
-        android:id="@+id/edit_student_activity_name_textView"
+        android:id="@+id/student_details_activity_name_textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edit_student_activity_name_label_textView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/student_details_activity_name_label_textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edit_student_activity_name_label_textView" />
+        app:layout_constraintStart_toEndOf="@+id/student_details_activity_name_label_textView" />
 
     <TextView
-        android:id="@+id/edit_student_activity_id_textView"
+        android:id="@+id/student_details_activity_id_textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edit_student_activity_id_label_textView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/student_details_activity_id_label_textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edit_student_activity_id_label_textView" />
+        app:layout_constraintStart_toEndOf="@+id/student_details_activity_id_label_textView" />
 
     <TextView
-        android:id="@+id/edit_student_activity_phone_textView"
+        android:id="@+id/student_details_activity_phone_textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edit_student_activity_phone_label_textView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/student_details_activity_phone_label_textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edit_student_activity_phone_label_textView" />
+        app:layout_constraintStart_toEndOf="@+id/student_details_activity_phone_label_textView" />
 
     <TextView
         android:id="@+id/edit_student_activity_address_textView"
@@ -113,7 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edit_student_activity_address_label_textView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/student_details_activity_address_label_textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edit_student_activity_address_label_textView" />
+        app:layout_constraintStart_toEndOf="@+id/student_details_activity_address_label_textView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

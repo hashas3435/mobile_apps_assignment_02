@@ -12,9 +12,9 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.firstapplication.model.Model
 import com.example.firstapplication.model.Student
 
-const val DEFAULT_STUDENT_POSITION = 0
 
 class StudentDetailsActivity : AppCompatActivity() {
+    val DEFAULT_STUDENT_POSITION = 0
     private var studentPosition: Int = DEFAULT_STUDENT_POSITION
 
     private var nameEditText: TextView? = null
@@ -35,9 +35,9 @@ class StudentDetailsActivity : AppCompatActivity() {
             insets
         }
 
-        nameEditText = findViewById(R.id.edit_student_activity_name_textView)
-        idEditText = findViewById(R.id.edit_student_activity_id_textView)
-        phoneEditText = findViewById(R.id.edit_student_activity_phone_textView)
+        nameEditText = findViewById(R.id.student_details_activity_name_textView)
+        idEditText = findViewById(R.id.student_details_activity_id_textView)
+        phoneEditText = findViewById(R.id.student_details_activity_phone_textView)
         addressEditText = findViewById(R.id.edit_student_activity_address_textView)
         isCheckedCheckBox = findViewById(R.id.edit_student_activity_checked_checkBox)
 

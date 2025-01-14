@@ -1,11 +1,12 @@
 package com.example.firstapplication
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.firstapplication.model.Model
 
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +18,13 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        findViewById<Button>(R.id.add_student_button).apply {
+            setOnClickListener {
+                val intent = Intent(this@MainActivity, AddStudentActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 }
