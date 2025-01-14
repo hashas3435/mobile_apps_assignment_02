@@ -23,7 +23,7 @@ class StudentsRecyclerAdapter(private var students: List<Student>?): RecyclerVie
             parent,
             false
         )
-        return StudentViewHolder(itemView, listener)
+        return StudentViewHolder(itemView, this.listener)
     }
 
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
