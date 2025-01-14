@@ -12,8 +12,9 @@
         android:id="@+id/user_avatr"
         android:layout_width="165dp"
         android:layout_height="124dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:contentDescription="profile avater"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/avatar" />

@@ -28,11 +28,11 @@ class AddStudentActivity : AppCompatActivity() {
             insets
         }
 
-        nameEditText = findViewById<EditText>(R.id.nameEditText)
-        idEditText = findViewById<EditText>(R.id.idEditText)
-        phoneEditText = findViewById<EditText>(R.id.phoneEditText)
-        addressEditText = findViewById<EditText>(R.id.addressEditText)
-        isCheckedCheckBox = findViewById<CheckBox>(R.id.isCheckedCheckBox)
+        nameEditText = findViewById<EditText>(R.id.add_student_activity_name_editText)
+        idEditText = findViewById<EditText>(R.id.add_student_activity_id_editText)
+        phoneEditText = findViewById<EditText>(R.id.add_student_activity_phone_editText)
+        addressEditText = findViewById<EditText>(R.id.add_student_activity_address_editText)
+        isCheckedCheckBox = findViewById<CheckBox>(R.id.add_student_activity_isChecked_checkBox)
         setListenersToButtons()
     }
 
@@ -52,6 +52,7 @@ class AddStudentActivity : AppCompatActivity() {
         createUserButton.setOnClickListener {
             val student = createStudentFromInputs()
             Model.shared.students.add(student)
+            finish()
         }
 
         val cancelButton = findViewById<Button>(R.id.cancelButton)

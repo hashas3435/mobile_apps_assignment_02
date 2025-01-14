@@ -9,127 +9,129 @@
     tools:context=".AddStudentActivity">
 
     <ImageView
-        android:id="@+id/user_avatr"
+        android:id="@+id/add_student_activity_user_avatar"
         android:layout_width="165dp"
         android:layout_height="124dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:contentDescription="profile avater"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/avater" />
+        app:srcCompat="@drawable/avatar" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/add_student_activity_name_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:text="Name:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_avatr" />
+        app:layout_constraintTop_toBottomOf="@+id/add_student_activity_user_avatar" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/add_student_activity_id_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="ID:"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintStart_toStartOf="@+id/add_student_activity_name_textView"
+        app:layout_constraintTop_toBottomOf="@+id/add_student_activity_name_textView" />
 
     <EditText
-        android:id="@+id/nameEditText"
+        android:id="@+id/add_student_activity_name_editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
+        app:layout_constraintBaseline_toBaselineOf="@+id/add_student_activity_name_textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView4" />
+        app:layout_constraintStart_toEndOf="@+id/add_student_activity_name_textView" />
 
     <EditText
-        android:id="@+id/idEditText"
+        android:id="@+id/add_student_activity_id_editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="@+id/nameEditText"
-        app:layout_constraintStart_toEndOf="@+id/textView" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/add_student_activity_id_textView"
+        app:layout_constraintEnd_toEndOf="@+id/add_student_activity_name_editText"
+        app:layout_constraintStart_toEndOf="@+id/add_student_activity_id_textView" />
+
+    <TextView
+        android:id="@+id/add_student_activity_phone_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Phone:"
+        app:layout_constraintStart_toStartOf="@+id/add_student_activity_id_textView"
+        app:layout_constraintTop_toBottomOf="@+id/add_student_activity_id_textView" />
+
+    <EditText
+        android:id="@+id/add_student_activity_phone_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/add_student_activity_phone_textView"
+        app:layout_constraintEnd_toEndOf="@+id/add_student_activity_id_editText"
+        app:layout_constraintStart_toEndOf="@+id/add_student_activity_phone_textView" />
+
+    <TextView
+        android:id="@+id/add_student_activity_address_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Address:"
+        app:layout_constraintStart_toStartOf="@+id/add_student_activity_phone_textView"
+        app:layout_constraintTop_toBottomOf="@+id/add_student_activity_phone_textView" />
+
+    <EditText
+        android:id="@+id/add_student_activity_address_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        app:layout_constraintBaseline_toBaselineOf="@+id/add_student_activity_address_textView"
+        app:layout_constraintEnd_toEndOf="@+id/add_student_activity_phone_editText"
+        app:layout_constraintStart_toEndOf="@+id/add_student_activity_address_textView" />
+
+    <CheckBox
+        android:id="@+id/add_student_activity_isChecked_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="checked"
+        app:layout_constraintStart_toStartOf="@+id/add_student_activity_address_textView"
+        app:layout_constraintTop_toBottomOf="@+id/add_student_activity_address_textView" />
 
     <Button
-        android:id="@+id/cancelButton"
+        android:id="@+id/createButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="40dp"
         android:layoutDirection="ltr"
-        android:text="Cancel"
+        android:text="Create"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/createButton" />
+        app:layout_constraintStart_toEndOf="@+id/cancelButton" />
 
     <Button
-        android:id="@+id/createButton"
+        android:id="@+id/cancelButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="4dp"
         android:layoutDirection="ltr"
-        android:text="Create"
-        app:layout_constraintBaseline_toBaselineOf="@+id/cancelButton"
-        app:layout_constraintEnd_toStartOf="@+id/cancelButton"
+        android:text="Cancel"
+        app:layout_constraintBaseline_toBaselineOf="@+id/createButton"
+        app:layout_constraintEnd_toStartOf="@+id/createButton"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/phoneTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Phone:"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <EditText
-        android:id="@+id/phoneEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone"
-        app:layout_constraintBaseline_toBaselineOf="@+id/phoneTextView"
-        app:layout_constraintEnd_toEndOf="@+id/idEditText"
-        app:layout_constraintStart_toEndOf="@+id/phoneTextView" />
-
-    <TextView
-        android:id="@+id/addressTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Address:"
-        app:layout_constraintStart_toStartOf="@+id/phoneTextView"
-        app:layout_constraintTop_toBottomOf="@+id/phoneTextView" />
-
-    <EditText
-        android:id="@+id/addressEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:ems="10"
-        android:inputType="textPostalAddress"
-        app:layout_constraintBaseline_toBaselineOf="@+id/addressTextView"
-        app:layout_constraintEnd_toEndOf="@+id/phoneEditText"
-        app:layout_constraintStart_toEndOf="@+id/addressTextView" />
-
-    <CheckBox
-        android:id="@+id/isCheckedCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="checked"
-        app:layout_constraintStart_toStartOf="@+id/addressTextView"
-        app:layout_constraintTop_toBottomOf="@+id/addressTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
