@@ -6,4 +6,7 @@ data class Student(
     val phone: String,
     val address: String,
     var isChecked: Boolean
-)
+){
+    override fun equals(other: Any?): Boolean =
+        (other is Student) && this.id == other.id
+}

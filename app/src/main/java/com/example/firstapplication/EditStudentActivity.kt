@@ -13,7 +13,7 @@ import com.example.firstapplication.model.Student
 
 
 class EditStudentActivity : AppCompatActivity() {
-    val DEFAULT_STUDENT_POSITION = 0
+    private val DEFAULT_STUDENT_POSITION = 0
     private var studentPosition: Int = DEFAULT_STUDENT_POSITION
 
     private var nameEditText: EditText? = null
