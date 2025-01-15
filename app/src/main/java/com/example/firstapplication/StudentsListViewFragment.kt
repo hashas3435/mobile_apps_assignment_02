@@ -41,8 +41,8 @@ class StudentsListViewFragment : Fragment() {
     private fun setNavigateToAddStudentBtn(view: View) {
         view.findViewById<Button>(R.id.students_list_view_fragment_add_student_button).apply {
             setOnClickListener {
-                val intent = Intent(view.context, AddStudentActivity::class.java)
-                startActivity(intent)
+                val action = StudentsListViewFragmentDirections.actionGlobalAddStudentFragment()
+                Navigation.findNavController(view).navigate(action)
             }
         }
     }
