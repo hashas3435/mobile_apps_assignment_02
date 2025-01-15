@@ -28,18 +28,18 @@ class AddStudentActivity : AppCompatActivity() {
             insets
         }
 
-        nameEditText = findViewById<EditText>(R.id.add_student_activity_name_editText)
-        idEditText = findViewById<EditText>(R.id.add_student_activity_id_editText)
-        phoneEditText = findViewById<EditText>(R.id.add_student_activity_phone_editText)
-        addressEditText = findViewById<EditText>(R.id.add_student_activity_address_editText)
+        nameEditText = findViewById(R.id.add_student_activity_name_editText)
+        idEditText = findViewById(R.id.add_student_activity_id_editText)
+        phoneEditText = findViewById(R.id.add_student_activity_phone_editText)
+        addressEditText = findViewById(R.id.add_student_activity_address_editText)
         isCheckedCheckBox = findViewById<CheckBox>(R.id.add_student_activity_isChecked_checkBox)
         setListenersToButtons()
     }
 
     private fun createStudentFromInputs(): Student {
         return Student(
-            id = nameEditText?.text.toString(),
-            name = idEditText?.text.toString(),
+            id = idEditText?.text.toString(),
+            name = nameEditText?.text.toString(),
             phone = phoneEditText?.text.toString(),
             address = addressEditText?.text.toString(),
             isChecked = isCheckedCheckBox?.isChecked ?: false
