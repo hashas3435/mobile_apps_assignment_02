@@ -27,5 +27,15 @@
         android:id="@+id/addStudentFragment"
         android:name="com.example.firstapplication.AddStudentFragment"
         android:label="fragment_add_student"
-        tools:layout="@layout/fragment_add_student" /><action android:id="@+id/action_global_addStudentFragment" app:destination="@id/addStudentFragment"/>
+        tools:layout="@layout/fragment_add_student" />
+    <action android:id="@+id/action_global_addStudentFragment" app:destination="@id/addStudentFragment" />
+    <fragment
+        android:id="@+id/editStudentFragment"
+        android:name="com.example.firstapplication.EditStudentFragment"
+        android:label="fragment_edit_student"
+        tools:layout="@layout/fragment_edit_student" >
+        <argument
+            android:name="studentPosition"
+            app:argType="integer" />
+    </fragment><action android:id="@+id/action_global_editStudentFragment" app:destination="@id/editStudentFragment"/>
 </navigation>

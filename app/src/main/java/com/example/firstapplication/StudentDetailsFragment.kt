@@ -57,11 +57,12 @@ class StudentDetailsFragment : Fragment() {
     private fun setListenersToButtons(view: View) {
         view.findViewById<Button>(R.id.student_details_fragment_edit_button).apply {
             setOnClickListener {
+                val action = StudentsListViewFragmentDirections.actionGlobalEditStudentFragment(
+                    studentPosition
+                )
                 val navController = Navigation.findNavController(view)
                 navController.popBackStack()
-                val intent = Intent(view.context, EditStudentActivity::class.java)
-                intent.putExtra("student_position", studentPosition)
-                startActivity(intent)
+                navController.navigate(action)
             }
         }
     }
