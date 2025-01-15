@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firstapplication.adapter.OnItemClickListener
@@ -58,9 +59,12 @@ class StudentsListViewFragment : Fragment() {
 
     private fun navigateToStudentDetails(studentPosition: Int) {
         view?.let {
-            val intent = Intent(it.context, StudentDetailsActivity::class.java)
-            intent.putExtra("student_position", studentPosition)
-            startActivity(intent)
+            val action =
+                StudentsListViewFragmentDirections.actionStudentsListViewFragmentToStudentDetailsFragment(
+                    studentPosition
+                )
+            Navigation.findNavController(it)
+                .navigate(action)
         }
     }
 
