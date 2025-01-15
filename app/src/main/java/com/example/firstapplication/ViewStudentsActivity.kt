@@ -1,5 +1,6 @@
 package com.example.firstapplication
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -15,7 +16,6 @@ import com.example.firstapplication.model.Model
 import com.example.firstapplication.model.Student
 
 class ViewStudentsActivity : AppCompatActivity() {
-    val POSITION_DOES_NOT_EXIST = -1
     private var students: MutableList<Student>? = null
     private var adapter:  StudentsRecyclerAdapter? = null
 
@@ -47,31 +47,20 @@ class ViewStudentsActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onResume() {
         super.onResume()
         this.adapter?.update(Model.shared.students)
-        val deletedStudentPosition:Int = intent.getIntExtra("delete_student_position", POSITION_DOES_NOT_EXIST)
-        if (deletedStudentPosition != POSITION_DOES_NOT_EXIST){
-            this.adapter?.notifyItemRemoved(deletedStudentPosition)
-        }
-        val editedStudentPosition: Int = intent.getIntExtra("edit_student_position", POSITION_DOES_NOT_EXIST)
-        if (editedStudentPosition != POSITION_DOES_NOT_EXIST){
-            this.adapter?.notifyItemChanged(editedStudentPosition)
-        }
-        val addedStudentPosition: Int = intent.getIntExtra("add_student_position", POSITION_DOES_NOT_EXIST)
-        if (addedStudentPosition != POSITION_DOES_NOT_EXIST){
-            this.adapter?.notifyItemChanged(addedStudentPosition)
-        }
+        this.adapter?.notifyDataSetChanged()
     }
 
-
-    fun createAdapter(students: MutableList<Student>): StudentsRecyclerAdapter{
+    private fun createAdapter(students: MutableList<Student>): StudentsRecyclerAdapter{
         val initAdapter = StudentsRecyclerAdapter(students)
 
         initAdapter.listener = object : OnItemClickListener {
             override fun onItemClick(position: Int){
                 val intent = Intent(this@ViewStudentsActivity, StudentDetailsActivity::class.java)
-                intent.putExtra("student_position", position);
+                intent.putExtra("student_position", position)
                 startActivity(intent)
             }
             override fun onItemClick(student: Student?){

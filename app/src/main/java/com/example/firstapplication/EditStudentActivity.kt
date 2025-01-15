@@ -1,6 +1,5 @@
 package com.example.firstapplication
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
@@ -14,7 +13,7 @@ import com.example.firstapplication.model.Student
 
 
 class EditStudentActivity : AppCompatActivity() {
-    val DEFAULT_STUDENT_POSITION = 0
+    private val DEFAULT_STUDENT_POSITION = 0
     private var studentPosition: Int = DEFAULT_STUDENT_POSITION
 
     private var nameEditText: EditText? = null
@@ -68,9 +67,6 @@ class EditStudentActivity : AppCompatActivity() {
             setOnClickListener {
                 val student = createStudentFromInputs()
                 Model.shared.students[studentPosition] = student
-                val intent = Intent(this@EditStudentActivity, ViewStudentsActivity::class.java)
-                intent.putExtra("edit_student_position", studentPosition);
-                startActivity(intent)
                 finish()
             }
         }
@@ -78,9 +74,6 @@ class EditStudentActivity : AppCompatActivity() {
         findViewById<Button>(R.id.edit_student_activity_delete_button).apply {
             setOnClickListener {
                 Model.shared.students.removeAt(studentPosition)
-                val intent = Intent(this@EditStudentActivity, ViewStudentsActivity::class.java)
-                intent.putExtra("delete_student_position", studentPosition);
-                startActivity(intent)
                 finish()
             }
         }

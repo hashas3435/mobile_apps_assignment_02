@@ -1,6 +1,5 @@
 package com.example.firstapplication
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
@@ -53,10 +52,6 @@ class AddStudentActivity : AppCompatActivity() {
         createUserButton.setOnClickListener {
             val student = createStudentFromInputs()
             Model.shared.students.add(student)
-            val studentPosition = Model.shared.students.indexOf(student);
-            val intent = Intent(this@AddStudentActivity, ViewStudentsActivity::class.java)
-            intent.putExtra("add_student_position", studentPosition);
-            startActivity(intent)
             finish()
         }
 
