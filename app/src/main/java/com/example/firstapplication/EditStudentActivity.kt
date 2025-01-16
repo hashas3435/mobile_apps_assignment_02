@@ -1,20 +1,20 @@
 package com.example.firstapplication
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
-import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.example.firstapplication.model.Model
 import com.example.firstapplication.model.Student
 
 
-class EditStudentFragment : Fragment() {
-    private var studentPosition: Int = 0
+class EditStudentActivity : AppCompatActivity() {
+    private val DEFAULT_STUDENT_POSITION = 0
+    private var studentPosition: Int = DEFAULT_STUDENT_POSITION
 
     private var nameEditText: EditText? = null
     private var idEditText: EditText? = null
@@ -22,30 +22,26 @@ class EditStudentFragment : Fragment() {
     private var addressEditText: EditText? = null
     private var isCheckedCheckBox: CheckBox? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_edit_student)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+        nameEditText = findViewById(R.id.edit_student_activity_name_editText)
+        idEditText = findViewById(R.id.edit_student_activity_id_editText)
+        phoneEditText = findViewById(R.id.edit_student_phone_editText)
+        addressEditText = findViewById(R.id.edit_student_activity_address_editText)
+        isCheckedCheckBox = findViewById(R.id.edit_student_activity_checked_checkBox)
 
-        studentPosition =
-            arguments?.let { EditStudentFragmentArgs.fromBundle(it).studentPosition } ?: 0
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_edit_student, container, false)
-
-        nameEditText = view.findViewById(R.id.edit_student_fragment_name_editText)
-        idEditText = view.findViewById(R.id.edit_student_fragment_id_editText)
-        phoneEditText = view.findViewById(R.id.edit_student_phone_editText)
-        addressEditText = view.findViewById(R.id.edit_student_fragment_address_editText)
-        isCheckedCheckBox = view.findViewById(R.id.edit_student_fragment_checked_checkBox)
-
+        studentPosition = intent.getIntExtra("student_position", DEFAULT_STUDENT_POSITION)
         val student = Model.shared.students[studentPosition]
         setStudentData(student)
-        setListenersToButtons(view)
-
-        return view
+        setListenersToButtons()
     }
 
     private fun setStudentData(student: Student) {
@@ -66,27 +62,26 @@ class EditStudentFragment : Fragment() {
         )
     }
 
-    private fun setListenersToButtons(view: View) {
-        view.findViewById<Button>(R.id.edit_student_fragment_save_button).apply {
+    private fun setListenersToButtons() {
+        findViewById<Button>(R.id.edit_student_activity_save_button).apply {
             setOnClickListener {
                 val student = createStudentFromInputs()
                 Model.shared.students[studentPosition] = student
-                Navigation.findNavController(view).popBackStack()
+                finish()
             }
         }
 
-        view.findViewById<Button>(R.id.edit_student_fragment_delete_button).apply {
+        findViewById<Button>(R.id.edit_student_activity_delete_button).apply {
             setOnClickListener {
                 Model.shared.students.removeAt(studentPosition)
-                Navigation.findNavController(view).popBackStack()
+                finish()
             }
         }
 
-        view.findViewById<Button>(R.id.edit_student_fragment_cancel_button).apply {
+        findViewById<Button>(R.id.edit_student_activity_cancel_button).apply {
             setOnClickListener {
-                Navigation.findNavController(view).popBackStack()
+                finish()
             }
         }
     }
-
 }
