@@ -8,6 +8,18 @@
     android:layoutDirection="ltr"
     tools:context=".EditStudentActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/edit_student_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.Material3.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.Material3.ActionBar"
+        app:title="Edit Student" />
+
     <ImageView
         android:id="@+id/user_avatr"
         android:layout_width="165dp"
@@ -16,7 +28,7 @@
         android:layout_marginTop="8dp"
         android:contentDescription="profile avater"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_student_toolbar"
         app:srcCompat="@drawable/avatar" />
 
     <TextView
