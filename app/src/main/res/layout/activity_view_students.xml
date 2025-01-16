@@ -8,6 +8,18 @@
     android:layoutDirection="ltr"
     tools:context=".ViewStudentsActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/students_list_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.Material3.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.Material3.ActionBar"
+        app:title="Students List" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/view_students_activity"
         android:layout_width="0dp"
@@ -15,7 +27,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/students_list_toolbar" />
 
     <Button
         android:id="@+id/add_student_button"
